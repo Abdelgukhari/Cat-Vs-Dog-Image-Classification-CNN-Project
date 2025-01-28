@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dog and Cat Classifier with Transfer Learning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+      .hero {
+          background: linear-gradient(135deg, #ffffff, #f2f2f2);
+      }
+      .center {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .title {
+          font-size: 3rem;
+          color: #333;
+          text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      }
+      #pred {
+          color: #333;
+          font-size: 2.2rem;
+          text-align: center;
+      }
+      h2 span {
+          font-weight: bold;
+      }
+      .button {
+          background: linear-gradient(135deg, #1e90ff, #00bfff);
+          color: white;
+          border-radius: 25px;
+          border: none;
+      }
+      .button:hover {
+          background: linear-gradient(135deg, #00bfff, #1e90ff);
+      }
+      .pred_img {
+          border: 5px solid #fff;
+          border-radius: 15px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+
+<body>
+
+<!-- .hero -->
+<section class="hero is-fullheight">
+    <section class="section">
+        <div class="container center">
+            <h1 class="title">
+                Dog or Cat? Let’s Find Out!
+            </h1>
+        </div>
+    </section> 
+
+    <div class="columns is-vcentered">
+        <div class="column is-narrow">
+        </div>
+
+        <div class="column is-one-third has-text-centered">
+            <img class="pred_img" src="{{ url_for('send_file', filename=image_file_name)}}"/>
+        </div>
+
+        <div class="column is-one-quarter center">
+            <div>
+                <h2 id="pred">
+                    This is a <span>{{ label }}</span>
+                </h2>
+                <h2>
+                    Confidence: <span>{{ prob }}%</span>
+                </h2>
+                <br>
+                <a href="/" class="button">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+        </div>   
+    </section> 
+</section>
+<!-- /.hero -->
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>

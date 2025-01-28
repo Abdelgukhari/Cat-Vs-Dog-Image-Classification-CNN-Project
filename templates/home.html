@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI-Powered Pet Identifier</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <style>
+      .hero {
+          background: black url(static/images/cat_dog3.jpeg) center / cover no-repeat;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          height: 100vh;
+          padding: 20px;
+      }
+      .title {
+          font-size: 3rem;
+          color: #00bfff;
+          text-shadow: 1px 1px 3px rgba(8, 108, 239, 0.5);
+          margin-bottom: 20px;
+      }
+      .file-container {
+          background: rgba(255, 255, 255, 0.9);
+          padding: 20px;
+          border-radius: 15px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          margin-top: auto;
+          margin-bottom: 30px;
+      }
+      .file-label {
+          background-color: #00bfff;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 20px;
+          cursor: pointer;
+          margin-bottom: 10px;
+      }
+      .file-label:hover {
+          background-color: #008cba;
+      }
+      .button {
+          background: linear-gradient(135deg, #1e90ff, #00bfff);
+          color: white;
+          border-radius: 25px;
+          padding: 10px 20px;
+          border: none;
+          cursor: pointer;
+      }
+      .button:hover {
+          background: linear-gradient(135deg, #00bfff, #1e90ff);
+      }
+      .file-name {
+          font-size: 1rem;
+          color: #333;
+          margin-top: 10px;
+      }
+    </style>
+  </head>
+
+<body>
+
+<!-- .hero -->
+<section class="hero">
+    <div class="title">AI-Powered Pet Identifier</div>
+
+    <div class="file-container">
+        <form action="/classify" method="post" enctype="multipart/form-data">
+            <label class="file-label">
+                <input class="file-input" type="file" id="image" name="image">
+                Upload an image
+            </label>
+            <div class="file-name" id="file-name">No file chosen</div>
+            <br>
+            <button type="submit" class="button">Classify</button>
+        </form>
+    </div>
+</section>
+<!-- /.hero -->
+
+<script src="/static/script.js"></script>
+</body>
+</html>
